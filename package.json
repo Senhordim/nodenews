@@ -1,0 +1,14 @@
+{
+  "name": "node_news",
+  "version": "1.0.0",
+  "description": "web news ",
+  "main": "news.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Collares",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
