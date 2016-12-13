@@ -5,7 +5,7 @@ module.exports = function(app){
     var connection = app.config.dbConnection();
 
     connection.query('select * from news', function(error, result){
-      res.render("news/notices", {notices : result})
+      res.render("notices/notices", {notices : result})
     });
 
   });
