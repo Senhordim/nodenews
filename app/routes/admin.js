@@ -7,11 +7,11 @@ module.exports = function(application){
 
     var notice = req.body;
     var connection = application.config.dbConnection();
-    var noticesModel = application.app.models.noticesModel;
+    var noticesModel = new application.app.models.NoticesDAO(connection);
 
-    noticesModel.saveNotice(notice, connection, function(error, result){
+    noticesModel.saveNotice(notice, function(error, result){
       res.redirect('/notices');
     });
-    
+
   })
 }
