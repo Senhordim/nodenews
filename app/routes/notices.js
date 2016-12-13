@@ -1,10 +1,11 @@
-module.exports = function(app){
+module.exports = function(application){
 
-  app.get('/notices', function(req, res){
+  application.get('/notices', function(req, res){
 
-    var connection = app.config.dbConnection();
+    var connection = application.config.dbConnection();
+    var noticesModel = application.app.models.noticesModel;
 
-    connection.query('select * from news', function(error, result){
+    noticesModel.getNotices(connection, function(error, result){
       res.render("notices/notices", {notices : result})
     });
 

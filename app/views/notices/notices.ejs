@@ -1,19 +1,5 @@
-<h2>All Noticies</h2>
-<table>
-  <thead>
-    <th>ID</th>
-    <th>Título</th>
-    <th>Resumo</th>
-    <th>Texto</th>
-  </thead>
-  <tbody>
-
-    <% for(var i=0; i < notices.length; i++ ) { %>
-      <tr>
-        <td><%= notices[i].title %></td>
-        <td><%= notices[i].summary %></td>
-      </tr>
-    <% } %>
-
-  </tbody>
-</table>
+<% for(var i=0; i < notices.length; i++ ) { %>
+    <h2><%= notices[i].title %></h2>
+    <h3><%= notices[i].summary %></h3>
+    <hr>
+<% } %>
