@@ -8,5 +8,9 @@ module.exports = function(){
     connection.query('select * from news where id = 2', callback)
   }
 
+  this.saveNotice = function(notice, connection, callback){
+    connection.query('insert into news set ?', notice, callback)
+  }
+
   return this;
 }
