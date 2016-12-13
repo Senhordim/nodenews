@@ -10,7 +10,12 @@ app.set('view engine', 'ejs');
 app.set('views', './app/views')
 
 // config routes to project with consign module
-consign().include('app/routes').into(app);
+consign()
+  .include('app/routes')
+  .then('config/dbConnection.js')
+  .into(app);
+
+// autoload connection Mysql
 
 // Exportando modulo
 module.exports = app;
