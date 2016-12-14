@@ -1,12 +1,20 @@
 <h2>Form</h2>
 
+<% if(valited) { %>
+  <ul>
+    <% for(var i = 0; i < valited.length; i++) { %>
+      <li><%= valited[i].msg %></li>
+    <% } %>
+  </ul>
+<% } %>
+
 <form action="/notices/save" method="post">
   <label for="title">Título</label>
-  <input type="text" name="title" placeholder="Insira o título"><br>
+  <input type="text" name="title" value="<%= notice.title %>" placeholder="Insira o título"><br>
   <label for="summary">Descrição</label>
-  <input type="text" name="summary" placeholder="Insira uma descriçào curta"><br>
+  <input type="text" name="summary" value="<%= notice.summary %>" placeholder="Insira uma descriçào curta"><br>
   <label for="body">Texto</label>
-  <textarea cols=60 id="body" rows="10" name="body" placeholder="coragem, você consegue ! "></textarea>
+  <textarea cols=60 id="body" rows="10" name="body" placeholder="coragem, você consegue ! "><%= notice.body %></textarea>
   <hr>
   <input type="submit" value="Enviar">
 </form>
