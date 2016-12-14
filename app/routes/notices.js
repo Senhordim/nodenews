@@ -1,14 +1,11 @@
 module.exports = function(application){
 
   application.get('/notices', function(req, res){
+    application.app.controllers.notices.index(application, req, res);
+  });
 
-    var connection = application.config.dbConnection();
-    var noticesModel = new application.app.models.NoticesDAO(connection);
-
-    noticesModel.getNotices( function(error, result){
-      res.render("notices/notices", {notices : result})
-    });
-
+  application.get('/notice', function(req, res){
+    application.app.controllers.notices.show(application, req, res);
   });
 
 };
